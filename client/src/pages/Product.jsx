@@ -86,7 +86,7 @@ const Product = () => {
        <section className="mt-10 snap-x ">
           <h2 className="text-white text-4xl pb-6">Others You Might Like</h2>
           <div className="flex overflow-x-auto snap-x scroll-smooth space-x-3 md:space-x-6 pb-4 no-scrollbar">
-            {similarProduct.map((similarProduct) => {
+            {SimilarProducts.map((similarProduct) => {
               const {_id,image,title,rating,price,duration} = similarProduct
               return (
                <div
