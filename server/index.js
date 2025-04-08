@@ -7,12 +7,11 @@ import cors from "cors"
 
 
 const app = express();
-app.use(cors())
 
 const port = process.env.PORT || 4040;
 dotenv.config()
 // http://localhost:4040/api/product/create
-
+app.use(cors())
 app.use(express.json());
 // api routes
 app.use("/api/product", productRoute);
