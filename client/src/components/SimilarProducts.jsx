@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { menuItems } from '../db';
 import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
-import rateIcon from "../assets/rating-icon.svg";
 import MyButton from './MyButton';
 import { toast } from "sonner";
 
@@ -21,7 +20,7 @@ const SimilarProducts = () => {
           <>
           
         <h1>Similar Products You Might Like</h1>
-        <div className='flex justify-between flex-wrap gap-y-5 lg:gap-y-8 mb-6'>
+        <div className='flex justify-between flex-wrap gap-y-5 lg:gap-y-8 mb-6 lg:flex-nowrap' >
           {threeRandomItems.map((randomItx)=>{
             const {_id,title,image,description,price,rating,duration} = randomItx
             return(

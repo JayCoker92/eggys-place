@@ -10,8 +10,13 @@ import { Toaster, toast } from "sonner";
 import ScrollToTop from "./utils/ScrollToTop";
 import LocationModal from "./components/modals/LocationModal";
 import ResetPwd from "./auth/ResetPwd";
-import ForgotPwd from "./auth/ForgotPwd"
+import ForgotPwd from "./auth/ForgotPwd";
 import ErrorPage from "./pages/ErrorPage";
+import Checkout from "./pages/Checkout";
+import Order from "./pages/Order";
+import Dashboard from "./pages/Dashboard";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Test from "./pages/Test.jsx";
 
 
 // const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cart')) || []
@@ -92,16 +97,32 @@ function App() {
                   <Navbar /> <Footer />
                 </>
               }
-            >
+            > <Route path="/test" element={<Test/>}/> 
               <Route path="/" element={<Home />} />
               <Route path="/product/:productId" element={<Product />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/cart/checkout" element={<Checkout />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/order"
+                element={
+                  <PrivateRoute>
+                    <Order />
+                  </PrivateRoute>
+                }
+              />
             </Route>
-            <Route path="/reset-password" element={<ResetPwd/>}/>
-
-            <Route path="/forgot-password" element={<ForgotPwd/>}/>
-            <Route path="/reset-password/:resetToken" element={<ResetPwd/>}/>
-            <Route path="*" element={<ErrorPage/>}/>
+            <Route path="/reset-password" element={<ResetPwd />} />
+            <Route path="/forgot-password" element={<ForgotPwd />} />
+            <Route path="/reset-password/:resetToken" element={<ResetPwd />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

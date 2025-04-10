@@ -8,12 +8,14 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signInSchema } from "../utils/ValidationSchema";
 import {toast } from "sonner";
-import LoadingRing from "../utils/Loader"
+import LoadingRing from "../utils/Loader";
+import { useAuth } from "../context/AuthContext";
 
 const baseUrl = import.meta.env.VITE_API_URL;
 
 const SignIn = ({ switchToSignUp }) => {
   const [isReveal, setIsReveal] = useState(false)
+  const { login } = useAuth()
   function togglePwd(){
     setIsReveal((prev)=> !prev)
   }
@@ -42,12 +44,13 @@ const SignIn = ({ switchToSignUp }) => {
             if (!res.success) {
               toast.error(res.errMsg)
               // setIsClicked(true)
-              reset()
+              // reset()
             }
             if (res.success) {
               toast.success(res.message)
               localStorage.setItem("customerToken", res.user.token)
-              reset()
+              login(res.user.token,res.user);
+              // reset()
               // switchToSignIn()
               
             }

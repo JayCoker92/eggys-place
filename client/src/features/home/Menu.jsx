@@ -7,6 +7,7 @@ import rateIcon from "../../assets/rating-icon.svg";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import CartContext from "../../context/CartContext";
+// import rateIcon from "../assets/rating-icon.svg";
 
 const baseUrl = import.meta.env.VITE_API_URL;
 

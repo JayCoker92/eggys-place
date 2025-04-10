@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
 
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
@@ -67,7 +68,7 @@ userSchema.methods.comparePassword = async function (userPassword) {
     const isCorrect = await bcrypt.compare(userPassword,this.password);
     return isCorrect;
 }
-// generating jwt 
+// generating jwt token
 userSchema.methods.generateToken = async function (params) {
     let token = jwt.sign({userId:this._id,role:this.role,firstName:this.firstName},process.env.JWT_SECRET,{expiresIn:"24hr"})
     return token
