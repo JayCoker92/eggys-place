@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 import MyButton from './MyButton';
 import { toast } from "sonner";
+import rateIcon from "../assets/rating-icon.svg";
 
 
 const SimilarProducts = () => {

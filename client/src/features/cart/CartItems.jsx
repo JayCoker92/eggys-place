@@ -6,6 +6,7 @@ import { handleInc, handleDec, handleRemove } from "../../utils/CartUtils";
 
 const CartItems = () => {
   const { cart, setCart } = useContext(CartContext);
+  const today = new Date().toLocaleDateString();
   return (
     <section className="md:col-span-2 rounded-[10px] mt-3 bg-[#100101] h-fit ">
       <h1 className="px-3 md:px-8 pt-4 font-[500] text-[24px] ">
@@ -39,8 +40,7 @@ const CartItems = () => {
                     {title.slice(0, 7)}{" "}
                   </h1>
                   <p className="font-[400] text-[12px] text-[#FBFBFB]">
-                    {" "}
-                    14/01/2025{" "}
+                  <p className="text-white">{today}</p>
                   </p>
                   <h2>
                     {" "}

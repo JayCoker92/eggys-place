@@ -10,12 +10,12 @@ import SearchField from "../components/SearchField";
 import searchLogo from "../assets/search-logo.svg"
 import CartContext from "../context/CartContext";
 import dropDrownIcon from "../assets/drop-down-img.svg";
-// import HelloIcon from '../assets/helloicon.png';
+ import HelloIcon from "../assets/HelloIcon.svg";
  import MailIcon from "../assets/MailIcon.svg";
  import OrderIcon from "../assets/OrdersIcon.svg";
  import DashboardIcon from "../assets/DashboardIcon.svg";
- import LogoutIcon from "../assets/LogoutIcon .svg";
-// import checkIcon from "../assets/dangerIcon.svg"
+  import LogoutIcon from "../assets/LogOutIcon.png"
+ import checkIcon from "../assets/DangerIcon.svg";
 import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
   const [isTrue,setIsTrue] = useState(false);
   const {cart} = useContext(CartContext);
   const savedLocation = localStorage.getItem("userLocation");
-  // console.log(cart);
+  //  console.log(cart);
   
   // const [isOpen,setIsOpen] = useState()
   function toggleSearch(){
@@ -91,10 +91,10 @@ const Navbar = () => {
               {user ? <div className="dropdown dropdown-center text-white ">
   <div tabIndex={0} role="button" className="flex  m-1 bg-black border-none text-white "><img src={HelloIcon} alt="" /><span> Hi, {user.firstName}</span><img src={dropDrownIcon} alt="" /></div>
   <ul tabIndex={0} className="dropdown-content menu bg-[#252422] leading-[100%] rounded-box z-1 w-[243px] h-fit rounded-[7px] p-[8px] gap-[24px] shadow-sm">
-    <li className="hidden lg:inline-block"><a><img src={DashboardIcon} alt="" /> Dashboard</a></li>
-    <li><a><img src={HelloIcon} alt="" /> My Account</a></li>
-    <li><a><img src={OrderIcon} alt="" />Orders</a></li>
-    <li><a><img src={MailIcon} alt="" className="w-6 h-7" /> Inbox</a></li>
+    <li className="hidden lg:inline-block"><Link to="/Dashboard"><img src={DashboardIcon} alt=""/> Dashboard</Link></li>
+    <li><Link to="/Account"><img src={HelloIcon} alt="" /> My Account</Link></li>
+    <li><Link to="/Order"><img src={OrderIcon} alt="" />Orders</Link></li>
+    <li><Link to="/Mail"><img src={MailIcon} alt="" className="w-6 h-7" /> Inbox</Link></li>
     <li className="text-[#FF0000]" onClick={() => document.getElementById('my_modal_2').showModal()}><a><img src={LogoutIcon} alt="" />Log Out</a></li>
   </ul>
   <dialog id="my_modal_2" className="modal h-fit flex justify-center items-center">

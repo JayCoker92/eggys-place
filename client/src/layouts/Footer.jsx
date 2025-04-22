@@ -32,7 +32,7 @@ const Footer = () => {
       <section className="wrapper text-[14px]  font-[400]  text-[#FBFBFB] ">
         <div className="border-t-2  pt-8 lg:flex  text-center justify-between ">
 
-        <p className="pb-4">TM & Copyright 2025 Jazzy Corporation. All Rights Reserved.</p>
+        <p className="pb-4">TM & Copyright 2025 Jay Coker Corporation. All Rights Reserved.</p>
         <p>Privacy Policy</p>
         </div>
       </section>

@@ -9,12 +9,10 @@ const Home = ({handleAddToCart}) => {
     <>
     <main>
       <Hero/>
-      {/* <Menu handleAddToCart={handleAddToCart}/> */}
-      <Menu/>
+      <Menu handleAddToCart={handleAddToCart}/>
     </main>
     </>
   )
-  
 }
 
 export default Home
